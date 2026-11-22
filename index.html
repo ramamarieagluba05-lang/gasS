@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Where Can I Seek Help?</title>
+
+<style>
+:root {
+  --orange: #FF914D;
+  --deep: #C94F70;
+  --pink: #F07891;
+  --cream: #FFF7FA;
+  --ink: #382832;
+  --soft: #FFE8EF;
+  --line: #F5C6D5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 5% 12%, #FFE2EB 0, transparent 20%),
+    radial-gradient(circle at 95% 35%, #FFE8D5 0, transparent 22%),
+    var(--cream);
+  color: var(--ink);
+  font: 16px/1.6 system-ui, sans-serif;
+}
+
+/* HEADER */
+header {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #F07891, #FF914D);
+  color: white;
+  padding: 42px 20px 38px;
+  text-align: center;
+}
+
+header::before,
+header::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.13);
+}
+
+header::before {
+  width: 180px;
+  height: 180px;
+  top: -65px;
+  left: -45px;
+}
+
+header::after {
+  width: 230px;
+  height: 230px;
+  bottom: -130px;
+  right: -50px;
+}
+
+header > * {
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  letter-spacing: .15em;
+  font-weight: 800;
+  font-size: .78rem;
+}
+
+h1 {
+  font-size: clamp(2rem, 7vw, 3rem);
+  line-height: 1.08;
+  margin: 14px auto;
+}
+
+header p {
+  max-width: 700px;
+  margin: 12px auto;
+}
+
+/* MAIN */
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 22px 18px;
+}
+
+/* NOTICE */
+.notice {
+  background: white;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--pink);
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 14px #C94F7010;
+}
+
+/* EMERGENCY BUTTON */
+.emergency {
+  display: block;
+  text-align: center;
+  background: linear-gradient(135deg, #D94E70, #F07891);
+  color: white;
+  text-decoration: none;
+  padding: 22px;
+  border-radius: 18px;
+  margin: 20px 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  box-shadow: 0 6px 16px #C94F7030;
+  transition: .2s;
+}
+
+.emergency:hover {
+  transform: translateY(-3px);
+}
+
+.emergency span {
+  display: block;
+  font-size: 2.6rem;
+}
+
+/* CARD GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 18px;
+}
+
+/* CARDS */
+.card {
+  position: relative;
+  overflow: hidden;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 20px 18px;
+  box-shadow: 0 4px 15px #C94F7010;
+  transition: .2s;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--pink), var(--orange));
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px #C94F7020;
+}
+
+.card h2 {
+  font-size: 1.15rem;
+  color: var(--deep);
+  margin: 3px 0 10px;
+}
+
+.card p {
+  margin: 8px 0;
+}
+
+/* CONTACT LINKS */
+.contact {
+  display: inline-block;
+  margin: 5px 4px;
+  padding: 9px 12px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #FFE8EF, #FFF0E4);
+  color: #A83C5B;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid var(--line);
+  transition: .2s;
+}
+
+.contact:hover {
+  background: #FFD6E3;
+  transform: scale(1.03);
+}
+
+/* SECTION HEADINGS */
+section {
+  margin: 28px 0;
+}
+
+h2.section {
+  color: var(--deep);
+  font-size: 1.4rem;
+}
+
+h2.section::after {
+  content: "";
+  display: block;
+  width: 65px;
+  height: 4px;
+  margin-top: 8px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--pink), var(--orange));
+}
+
+/* TEXT */
+.small {
+  font-size: .9rem;
+  color: #76616B;
+}
+
+/* LISTS */
+ul {
+  padding-left: 22px;
+}
+
+li {
+  margin-bottom: 7px;
+}
+
+li::marker {
+  color: var(--pink);
+}
+
+/* FOOTER */
+footer {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #B83F62, #D95B78);
+  color: white;
+  padding: 30px 20px;
+  margin-top: 35px;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  top: -60px;
+  right: -35px;
+}
+
+footer .inner {
+  max-width: 900px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+footer .small {
+  color: #FFE3EC;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  header {
+    padding: 32px 16px;
+  }
+
+  main {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .card {
+    padding: 18px 15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="eyebrow">VAW-FREE COMMUNITY ADVOCACY</div>
+
+  <h1>Where Can I Seek Help?</h1>
+
+  <p>
+    You are not alone. If you or someone you know is experiencing
+    abuse, harassment, or violence, support and help are available.
+  </p>
+</header>
+
+<main>
+
+<div class="notice">
+  <strong>Important:</strong>
+  If someone is in immediate danger, move to a safer place if possible
+  and contact emergency services or a trusted person.
+  Avoid confronting an abusive person if it could increase danger.
+</div>
+
+<a class="emergency" href="tel:911">
+  National Emergency Hotline
+  <span>911</span>
+  <small>Tap to call when available on your device</small>
+</a>
+
+<section>
+<h2 class="section">Find the Kind of Help You Need</h2>
+
+<div class="grid">
+
+<!-- BARANGAY -->
+<div class="card">
+<h2>🏘️ Barangay & Local Social Services</h2>
+
+<p>
+<b>Barangay VAW Desk</b> — Visit the VAW Desk at your barangay
+hall for assistance, referrals, and information about protection options.
+</p>
+
+<p>
+<b>Local Social Welfare Office</b> — Your city or municipal social
+welfare office can help connect you with social workers and support services.
+</p>
+
+<p class="small">
+Ask a trusted person to accompany you if you feel safer doing so.
+</p>
+</div>
+
+<!-- POLICE -->
+<div class="card">
+<h2>👮 Police Assistance</h2>
+
+<p>
+<b>PNP Women and Children Protection Center (WCPC)</b> —
+Assistance related to reporting and protection for women and children.
+</p>
+
+<a class="contact" href="tel:09197777377">
+Aling Pulis: 0919-777-7377
+</a>
+
+<a class="contact" href="tel:09667255961">
+0966-725-5961
+</a>
+
+<a class="contact" href="tel:09209071717">
+0920-907-1717
+</a>
+
+<p class="small">
+WCPC Main Office: (02) 8352-6690 /
+7410-3213 / 7723-0401
+</p>
+</div>
+
+<!-- LEGAL -->
+<div class="card">
+<h2>⚖️ Legal Assistance</h2>
+
+<p>
+<b>Public Attorney's Office (PAO)</b> — May provide legal
+assistance to qualified clients.
+</p>
+
+<a class="contact" href="tel:0289299436">
+(02) 8929-9436
+</a>
+
+<p class="small">
+Locals 106, 107, 159; operator local 0.
+</p>
+
+<p><b>NBI Anti-VAWC Division</b></p>
+
+<a class="contact" href="tel:0285256028">
+(02) 8525-6028
+</a>
+</div>
+
+<!-- MEDICAL -->
+<div class="card">
+<h2>🏥 Medical Support</h2>
+
+<p>
+<b>Women and Children Protection Unit (WCPU)</b> — Hospital-based
+teams may provide medical assessment, care, and referrals for women
+and children who experienced abuse.
+</p>
+
+<p>
+Ask the nearest hospital if it has a Women and Children Protection
+Unit or a social worker who can help with referrals.
+</p>
+</div>
+
+<!-- SOCIAL SERVICES -->
+<div class="card">
+<h2>🤝 Social & Referral Support</h2>
+
+<p><b>DSWD Ugnayan / Crisis Intervention</b></p>
+
+<a class="contact" href="tel:0287348639">
+(02) 8734-8639
+</a>
+
+<a class="contact" href="tel:0287348654">
+(02) 8734-8654
+</a>
+
+<p class="small">
+Also listed: (02) 8734-8626 to 27.
+</p>
+
+<p>
+<b>PCW VAW Referral Service</b> — Referral assistance to
+appropriate services for VAW, VAWC, and gender-based violence.
+</p>
+
+<a class="contact" href="tel:09178671907">
+0917-867-1907
+</a>
+
+<a class="contact" href="mailto:vrs@pcw.gov.ph">
+vrs@pcw.gov.ph
+</a>
+</div>
+
+<!-- CHILDREN -->
+<div class="card">
+<h2>🧒 Help for Children</h2>
+
+<p>
+<b>Makabata Helpline (Council for the Welfare of Children)</b>
+</p>
+
+<a class="contact" href="tel:09158022375">
+0915-8022-375
+</a>
+
+<a class="contact" href="tel:09603779863">
+0960-3779-863
+</a>
+
+<p>
+Children can reach out to a trusted adult, school guidance office,
+social worker, or appropriate child-protection service.
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- SUPPORT -->
+<section class="notice">
+
+<h2 class="section">If You're Supporting Someone</h2>
+
+<ul>
+<li>Listen and take their concern seriously.</li>
+<li>Do not blame, shame, or pressure them.</li>
+<li>Ask what support would feel helpful and respect their choices.</li>
+<li>Help them connect with a trusted adult or qualified support service.</li>
+<li>Keep their personal information private, unless safety requires help from a responsible professional.</li>
+</ul>
+
+</section>
+
+<!-- REFERENCES -->
+<section>
+
+<h2 class="section">Official Sources & Further Information</h2>
+
+<ul>
+
+<li>
+<a href="https://pcw.gov.ph/community-forum/where-can-i-seek-help/">
+Philippine Commission on Women — Where Can I Seek Help?
+</a>
+</li>
+
+<li>
+<a href="https://iacvawc.gov.ph/report-abuse/">
+IACVAWC — Report Abuse / Help Contacts
+</a>
+</li>
+
+<li>
+<a href="https://pcw.gov.ph/faq-republic-act-9262/">
+PCW — FAQs on Republic Act 9262
+</a>
+</li>
+
+<li>
+<a href="https://ehotlines.e.gov.ph/">
+Philippine Government Emergency Hotlines
+</a>
+</li>
+
+</ul>
+
+<p class="small">
+Contact details can change. Check official sources for updated details
+before relying on or publishing numbers. For emergencies, contact
+emergency services. Otherwise, a barangay VAW Desk or local social
+welfare office can help direct you to services.
+</p>
+
+</section>
+
+</main>
+
+<footer>
+<div class="inner">
+
+<strong>UNiTEd: Creating a VAW-Free Community</strong>
+
+<p>
+Everyone deserves safety, dignity, and respect.
+Seeking help is not your fault, and you do not have to face violence alone.
+</p>
+
+<p class="small">
+Student advocacy resource page. This page is informational and does not
+replace professional legal, medical, or social-work assistance.
+</p>
+
+</div>
+</footer>
+
+</body>
+</html>
